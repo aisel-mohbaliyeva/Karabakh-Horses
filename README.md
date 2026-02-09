@@ -1,4 +1,4 @@
-# Karabakh Horses
+
 
 **Type:** Practice Project  
 **Based on:** YouTube tutorial (modified by me)  
