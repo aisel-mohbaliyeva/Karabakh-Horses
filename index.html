@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karabakh Horses</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+        <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <span class="logo-dot"></span>
+                Horse's About
+            </a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#trending">Services</a></li>
+                <li><a href="#video-section">Contact</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Karabakh_horse " target="_blank" class="nav-wikipedia">Wikipedia</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <span class="hero-tag">Site</span>
+                <h1 class="hero-title">Karabakh <span>Horse's</span></h1>
+                <h2 class="hero-sub">Information:</h2>
+                <p class="hero-desc">The Karabakh horse is a small, elegant breed native to the Karabakh region of Azerbaijan. Known for its golden chestnut color, strong legs, and lively personality, it is highly valued for endurance and speed. Karabakh horses are intelligent, gentle, and loyal, making them perfect companions for riding and cultural events. They are considered a national symbol of Azerbaijan and are famous for their beauty.</p>
+                <button class="btn-primary" id="readMoreBtn">Read More</button>
+            </div>
+            <div class="hero-right">
+                <img src="horse1.png" alt="Karabakh Horse" class="hero-img" />
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-box">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <h2>About Karabakh Horses</h2>
+            <p>The Karabakh horse (Azerbaijani: Qarabağ atı) is an ancient mountain-steppe racing and riding horse. It is one of the oldest breeds in the world, originating from the Karabakh region of Azerbaijan.</p>
+            <br>
+            <p>These horses are known for their metallic golden-chestnut coat, compact body, and extraordinary stamina. They were historically prized by Persian shahs and Russian tsars alike.</p>
+            <br>
+            <p>Today, the Karabakh horse is considered a national symbol of Azerbaijan and efforts are underway to preserve and revive the breed, which had become critically endangered.</p>
+        </div>
+    </div>
+
+    <section id="trending" class="trending">
+        <div class="section-container">
+            <p class="section-sub">Popular Karabakh Horses</p>
+            <h2 class="section-title">Trending</h2>
+
+            <div class="horses-row">
+                <div class="horse-card">
+                    <img src="kehreba.jpg" alt="Kehraba Horse">
+                    <div class="card-body">
+                        <h3>Kehraba</h3>
+                        <p>Known for its golden chestnut color and gentle temperament. Highly prized for endurance.</p>
+                    </div>
+                </div>
+                <div class="horse-card">
+                    <img src="sumax.jpg" alt="Sumakh Horse">
+                    <div class="card-body">
+                        <h3>Sumakh</h3>
+                        <p>Elegant and intelligent, Sumakh is valued for agility and cultural performances.</p>
+                    </div>
+                </div>
+                <div class="horse-card">
+                    <img src="zammm.jpg" alt="Zaman Horse">
+                    <div class="card-body">
+                        <h3>Zaman</h3>
+                        <p>Famous for its beauty and speed, Zaman represents the national symbol of Azerbaijan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-section" class="video-section">
+        <div class="section-container">
+            <h2 class="section-title">Watch Our Karabakh Horses</h2>
+            <p class="section-sub">A short video showcasing their beauty and elegance.</p>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/e59ojJx3sK0"
+                    title="Karabakh Horses"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-contact" class="footer">
+        <div class="section-container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-sub">Get in touch with us through social media or phone.</p>
+
+            <div class="contact-info">
+                <p><strong>Address:</strong> Baku, Azerbaijan</p>
+                <p><strong>Phone:</strong> +994 50 123 45 67</p>
+                <p><strong>Email:</strong> info@karabakh.horses</p>
+            </div>
+
+            <div class="social-icons">
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+                <a href="https://wa.me/994501234567" target="_blank" aria-label="WhatsApp"><ion-icon name="logo-whatsapp"></ion-icon></a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"><ion-icon name="logo-youtube"></ion-icon></a>
+            </div>
+
+            <p class="footer-copy">&copy; 2024 Karabakh Horses. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">&#8679;</button>
+
+    <script src="app.js"></script>
+</body>
+</html>
