@@ -1,4 +1,8 @@
-# 🐎 Karabakh Horses . | https://karabakh-horses.vercel.app/ |
+# 🐎 Karabakh Horses . 
+
+
+## 🚀 Live Demo
+[View Live Project](https://karabakh-horses.vercel.app) 🔗
 
 ## 📌 Overview
 Karabakh Horses is a modern front-end project showcasing the beauty, elegance, and strength of Karabakh horses — one of Azerbaijan’s national treasures.
@@ -12,11 +16,11 @@ The goal of this project is to strengthen my front-end development skills and ex
 
 ---
 
-## 🛠 Technologies Used
-- HTML  
-- CSS  
-- JavaScript  
+## 💻 Tech Stack
+HTML | CSS | JavaScript
 
+## 🔹 Description
+A modern website showcasing the uniqueness and beauty of Karabakh Horses.
 ---
 
 ## 🚀 Features
