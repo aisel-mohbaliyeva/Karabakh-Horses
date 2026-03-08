@@ -1,7 +1,7 @@
 # 🐎 Karabakh Horses  
 
 ## 🚀 Live Demo
-[View Live Project](https://karabakh-horses.vercel.app) 🔗  
+## [View Live Project](https://karabakh-horses.vercel.app) 🔗  
 
 ---
 
