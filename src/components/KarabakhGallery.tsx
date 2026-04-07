@@ -2,8 +2,10 @@
 import { useState, useRef, useEffect } from "react";
 import { galleryImages } from "@/data/horseData";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Gallery() {
+  const { t } = useI18n();
   const [lightbox, setLightbox] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
@@ -37,11 +39,9 @@ export default function Gallery() {
       <div className="container mx-auto px-4">
         {/* Başlıq */}
         <div className={`text-center mb-14 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <span className="section-label">Visual Stories</span>
-          <h2 className="section-title">A Gallery of <em>Beauty</em></h2>
-          <p className="text-base mt-3.5 text-muted-foreground">
-            Each image captures a moment of grace, power, and timeless elegance.
-          </p>
+          <span className="section-label">{t("gallery.label")}</span>
+          <h2 className="section-title" dangerouslySetInnerHTML={{ __html: t("gallery.title") }} />
+          <p className="text-base mt-3.5 text-muted-foreground">{t("gallery.subtitle")}</p>
         </div>
 
         {/* Pinterest stili columns */}
@@ -55,12 +55,12 @@ export default function Gallery() {
             >
               <img
                 src={img.src}
-                alt={img.caption}
+                alt={t(img.captionKey)}
                 loading="lazy"
                 className="w-full block object-cover rounded-lg transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity gap-2 bg-black/40">
-                <span className="text-sm font-semibold text-center text-white px-2">{img.caption}</span>
+                <span className="text-sm font-semibold text-center text-white px-2">{t(img.captionKey)}</span>
                 <ZoomIn size={22} className="text-gold-light" />
               </div>
             </div>
@@ -84,7 +84,7 @@ export default function Gallery() {
             >
               <ChevronLeft size={24} />
             </button>
-            <img src={galleryImages[lightbox].src} alt={galleryImages[lightbox].caption} className="w-full max-h-[80vh] object-contain rounded-lg" />
+            <img src={galleryImages[lightbox].src} alt={t(galleryImages[lightbox].captionKey)} className="w-full max-h-[80vh] object-contain rounded-lg" />
             <button
               className="absolute top-1/2 -translate-y-1/2 -right-10 w-11 h-11 flex items-center justify-center rounded-full bg-black/60 border border-gold/30 text-white"
               onClick={() => setLightbox(p => ((p ?? 0) + 1) % galleryImages.length)}
@@ -92,7 +92,7 @@ export default function Gallery() {
               <ChevronRight size={24} />
             </button>
             <div className="flex items-center justify-between mt-3 text-sm italic text-white/80">
-              {galleryImages[lightbox].caption}
+              {t(galleryImages[lightbox].captionKey)}
               <span className="text-xs text-gold">{lightbox + 1} / {galleryImages.length}</span>
             </div>
           </div>

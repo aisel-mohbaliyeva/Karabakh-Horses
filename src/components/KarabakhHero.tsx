@@ -1,15 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
-const heroSlides = [
-  { id: 1, headline: "The Golden Horse of the Caucasus", sub: "A living symbol of Azerbaijani heritage — fierce, elegant, immortal." },
-  { id: 2, headline: "Speed Born from Ancient Mountains", sub: "Bred for centuries in the highland steppes of Karabakh, unmatched in endurance." },
-  { id: 3, headline: "Treasured by Shahs & Tsars", sub: "Prized across empires, the Karabakh horse defined prestige across the ancient world." },
-];
+import { useI18n } from "@/i18n/I18nProvider";
 
 export default function Hero() {
+  const { t } = useI18n();
   const [current, setCurrent] = useState(0);
   const [fading, setFading] = useState(false);
+
+  const heroSlides = [
+    { id: 1, headline: t("hero.slide1.headline"), sub: t("hero.slide1.sub") },
+    { id: 2, headline: t("hero.slide2.headline"), sub: t("hero.slide2.sub") },
+    { id: 3, headline: t("hero.slide3.headline"), sub: t("hero.slide3.sub") },
+  ];
 
   const goTo = useCallback((idx: number) => {
     setFading(true);
@@ -52,7 +54,7 @@ export default function Hero() {
       <div className="container relative z-[3] max-w-[760px]" style={{ paddingTop: "var(--nav-h)" }}>
         <div className="flex items-center gap-3.5 mb-7 animate-fade-up" style={{ animationDelay: "0.1s", animationFillMode: "both" }}>
           <span className="w-10 h-px" style={{ background: "hsl(var(--gold))", opacity: 0.7 }} />
-          <span className="text-[11px] font-semibold tracking-[4px] uppercase" style={{ color: "hsl(var(--gold-light))" }}>Azerbaijan's Living Legend</span>
+          <span className="text-[11px] font-semibold tracking-[4px] uppercase" style={{ color: "hsl(var(--gold-light))" }}>{t("hero.kicker")}</span>
           <span className="w-10 h-px" style={{ background: "hsl(var(--gold))", opacity: 0.7 }} />
         </div>
 
@@ -94,7 +96,7 @@ export default function Hero() {
               boxShadow: "0 4px 20px hsla(var(--gold) / 0.4)",
             }}
           >
-            Discover the Breed
+            {t("hero.cta.primary")}
           </a>
           <a href="#gallery" className="inline-flex items-center gap-2 px-7 py-3 rounded text-[13px] tracking-[1.5px] uppercase border transition-colors hover:border-[hsl(var(--gold))]"
             style={{
@@ -102,7 +104,7 @@ export default function Hero() {
               color: "hsla(35, 33%, 95%, 0.85)",
             }}
           >
-            View Gallery ↓
+            {t("hero.cta.secondary")}
           </a>
         </div>
       </div>

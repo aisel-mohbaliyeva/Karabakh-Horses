@@ -1,10 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 import { facts } from "@/data/horseData";
 import { Mountain, Sparkles, Trophy, Zap, TreePine, Shield, Crown, Palette } from "lucide-react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const iconMap = { Mountain, Sparkles, Trophy, Zap, TreePine, Shield, Crown, Palette } as const;
 
 export default function Facts() {
+  const { t } = useI18n();
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState<boolean[]>(new Array(facts.length).fill(false));
 
@@ -27,8 +29,8 @@ export default function Facts() {
     <section id="facts" ref={ref} className="relative overflow-hidden" style={{ padding: "var(--section-pad) 0", background: "hsl(var(--background))" }}>
       <div className="container">
         <div className="text-center mb-[clamp(40px,6vw,70px)]">
-          <span className="section-label">Did You Know?</span>
-          <h2 className="section-title"><em>Eight</em> Fascinating Facts</h2>
+          <span className="section-label">{t("facts.label")}</span>
+          <h2 className="section-title" dangerouslySetInnerHTML={{ __html: t("facts.title") }} />
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -47,8 +49,8 @@ export default function Facts() {
                 <div className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4 transition-all" style={{ background: "hsla(var(--green-accent) / 0.1)" }}>
                   <Icon size={24} style={{ color: "hsl(var(--green-accent))" }} />
                 </div>
-                <h3 className="text-lg font-semibold mb-2.5" style={{ fontFamily: "var(--font-display)", color: "hsl(var(--gold-light))" }}>{fact.title}</h3>
-                <p className="text-[13.5px] leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>{fact.text}</p>
+                <h3 className="text-lg font-semibold mb-2.5" style={{ fontFamily: "var(--font-display)", color: "hsl(var(--gold-light))" }}>{t(fact.titleKey)}</h3>
+                <p className="text-[13.5px] leading-relaxed" style={{ color: "hsl(var(--muted-foreground))" }}>{t(fact.textKey)}</p>
               </div>
             );
           })}
@@ -57,9 +59,9 @@ export default function Facts() {
         <div className="text-center mt-[clamp(50px,7vw,90px)] px-[clamp(16px,6vw,120px)]">
           <blockquote className="italic relative" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(20px, 3vw, 30px)", fontWeight: 300, color: "hsl(var(--muted-foreground))", lineHeight: 1.5 }}>
             <span className="absolute -top-8 -left-5 text-[100px] leading-none" style={{ fontFamily: "var(--font-display)", color: "hsla(var(--gold) / 0.12)" }}>"</span>
-            "The Karabakh horse is not merely an animal — it is a poem written in flesh and speed."
+            {t("facts.quote")}
           </blockquote>
-          <cite className="block mt-4 text-xs tracking-[3px] uppercase not-italic" style={{ color: "hsl(var(--gold))" }}>— Azerbaijani Folk Saying</cite>
+          <cite className="block mt-4 text-xs tracking-[3px] uppercase not-italic" style={{ color: "hsl(var(--gold))" }}>{t("facts.cite")}</cite>
         </div>
       </div>
     </section>
